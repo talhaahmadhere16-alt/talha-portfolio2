@@ -3,308 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Talha Ahmad Portfolio</title>
+<title>Talha Portfolio</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
 }
 
 body{
-    background:#0f172a;
-    color:white;
-    overflow-x:hidden;
+background:#0a0a0a;
+color:white;
+overflow:hidden;
 }
 
-header{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    flex-direction:column;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    position:relative;
+/* Animated background */
+.bg{
+position:absolute;
+width:100%;
+height:100%;
+background: radial-gradient(circle at 20% 20%, #00f7ff33, transparent),
+            radial-gradient(circle at 80% 80%, #7c3aed33, transparent);
+animation:moveBg 6s infinite alternate;
 }
 
-header::before{
-    content:'';
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:#00f7ff;
-    filter:blur(120px);
-    top:10%;
-    left:10%;
-    opacity:0.3;
+@keyframes moveBg{
+from{transform:scale(1);}
+to{transform:scale(1.2);}
 }
 
-header::after{
-    content:'';
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:#7c3aed;
-    filter:blur(120px);
-    bottom:10%;
-    right:10%;
-    opacity:0.3;
+.container{
+position:relative;
+z-index:2;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero{
-    z-index:2;
-    animation:fadeIn 2s ease;
+h1{
+font-size:60px;
+animation:fade 2s ease;
 }
 
-.hero h1{
-    font-size:70px;
-    font-weight:700;
-    margin-bottom:10px;
+p{
+color:#bbb;
+margin-top:10px;
+animation:fade 3s ease;
 }
 
-.hero h2{
-    font-size:28px;
-    color:#00f7ff;
-    margin-bottom:20px;
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
 }
 
-.hero p{
-    font-size:18px;
-    color:#cbd5e1;
+.buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 35px;
-    background:#00f7ff;
-    color:#000;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.4s;
+padding:15px 30px;
+border:none;
+border-radius:50px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+text-decoration:none;
+font-weight:600;
+}
+
+.mail{
+background:#00f7ff;
+color:#000;
+}
+
+.whatsapp{
+background:#25D366;
+color:#000;
 }
 
 .btn:hover{
-    transform:scale(1.1);
-    background:white;
-}
-
-section{
-    padding:80px 10%;
-}
-
-.section-title{
-    font-size:40px;
-    margin-bottom:40px;
-    color:#00f7ff;
-    text-align:center;
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(255,255,255,0.2);
 }
 
 .card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    padding:30px;
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-    margin-bottom:30px;
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(0,247,255,0.2);
-}
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
-}
-
-.skill{
-    background:#00f7ff;
-    color:#000;
-    padding:12px 20px;
-    border-radius:30px;
-    font-weight:600;
-    transition:0.4s;
-}
-
-.skill:hover{
-    transform:scale(1.1);
-}
-
-ul{
-    padding-left:20px;
-    line-height:2;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
-    color:#94a3b8;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@media(max-width:768px){
-
-.hero h1{
-    font-size:45px;
-}
-
-.hero h2{
-    font-size:22px;
-}
-
-.section-title{
-    font-size:32px;
-}
-
+margin-top:40px;
+padding:20px;
+border:1px solid #333;
+border-radius:15px;
+background:#111;
+animation:fade 4s ease;
 }
 
 </style>
 
 </head>
+
 <body>
 
-<header>
+<div class="bg"></div>
 
-<div class="hero">
-    <h1>Talha Ahmad</h1>
-    <h2>Walmart Store Specialist</h2>
+<div class="container">
 
-    <p>
-        Product Listing • SEO • PPC Campaigns • WFS Management
-    </p>
+<h1>Talha Ahmad</h1>
+<p>Walmart Store Specialist | SEO | PPC | Listing Expert</p>
 
-    <a href="#about" class="btn">Explore Portfolio</a>
+<div class="buttons">
+
+<!-- Email Button -->
+<a class="btn mail" href="mailto:talhaahmadhere16@gmail.com">
+📧 Send Email
+</a>
+
+<!-- WhatsApp Button -->
+<a class="btn whatsapp" href="https://wa.me/923240630515" target="_blank">
+💬 WhatsApp Me
+</a>
+
 </div>
-
-</header>
-
-<section id="about">
-
-<h2 class="section-title">About Me</h2>
 
 <div class="card">
-    <p>
-        Experienced Walmart Store Specialist with expertise in product listing,
-        listing optimization, PPC campaign management, inventory handling,
-        customer support, and WFS shipment management.
-        Passionate about growing eCommerce brands and improving sales performance.
-    </p>
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Experience</h2>
-
-<div class="card">
-
-<h3>Walmart Store Specialist</h3>
-<p>Jan 2023 – Current</p>
-
-<ul>
-    <li>Created and optimized Walmart product listings.</li>
-    <li>Managed PPC campaigns and SEO strategies.</li>
-    <li>Handled WFS shipments and compliance.</li>
-    <li>Managed inventory and supplier coordination.</li>
-    <li>Provided customer support and account management.</li>
-</ul>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Skills</h2>
-
-<div class="skills">
-
-<div class="skill">SEO</div>
-<div class="skill">Product Listing</div>
-<div class="skill">PPC Ads</div>
-<div class="skill">Inventory</div>
-<div class="skill">WFS</div>
-<div class="skill">Customer Care</div>
-<div class="skill">Keyword Research</div>
-<div class="skill">Content Writing</div>
-<div class="skill">Sales Management</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Education</h2>
-
-<div class="card">
-
-<h3>Bachelor of Business Administration</h3>
-<p>Government College University Faisalabad</p>
-<p>2026 – Current</p>
-
-<br>
-
-<h3>Intermediate</h3>
-<p>Government Crescent College</p>
-<p>2023 – 2025</p>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Achievements</h2>
-
-<div class="card">
-
-<ul>
-    <li>Improved product discoverability and conversion rates.</li>
-    <li>Managed timely and accurate WFS shipments.</li>
-    <li>Enhanced Walmart store visibility and sales performance.</li>
-</ul>
-
-</div>
-
-</section>
-
-<footer>
-
 <p>
-    © 2026 Talha Ahmad Portfolio Website
+Welcome to my portfolio website.  
+Contact me directly using email or WhatsApp buttons above.
 </p>
+</div>
 
-<p>
-    Punjab, Pakistan | talhaahmadhere16@gmail.com
-</p>
-
-</footer>
+</div>
 
 </body>
 </html>
